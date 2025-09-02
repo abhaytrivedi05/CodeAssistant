@@ -1,141 +1,122 @@
-# 🧩 Problem Solver AI
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![Flask](https://img.shields.io/badge/Flask-Backend-black.svg)
-![React](https://img.shields.io/badge/React-18-61DAFB.svg)
-![Google Gemini](https://img.shields.io/badge/Google-GeminiAI-4285F4.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-An intelligent platform that provides **comprehensive, step-by-step solutions** for complex problems across multiple technical domains.  
+# CodeAssistant
 
-Powered by **Google's Gemini AI**, this application analyzes problems and delivers structured solutions with multiple approaches, runnable code implementations, and **visual flowcharts**.
+An intelligent platform that provides comprehensive, step-by-step solutions for complex problems across multiple technical domains. Powered by Google's Gemini AI, this application analyzes problems and delivers structured solutions with multiple approaches, code implementations, and visual flowcharts.
 
----
+## Features
 
-## ✨ Features
+🧠 **Multi-Domain Support**: DSA, ML, Cloud, AI, and Cybersecurity  
+📊 **Visual Flowcharts**: Mermaid-based solution flowcharts  
+🚀 **Multiple Approaches**: Brute force, optimized, and alternative solutions  
+💡 **Detailed Explanations**: Step-by-step problem breakdown  
+📝 **Code Examples**: Complete, runnable code implementations  
+⚡ **Real-time Processing**: Powered by Google Gemini AI  
 
-- 🧠 **Multi-Domain Support**: DSA, ML, Cloud, AI, and Cybersecurity  
-- 📊 **Visual Flowcharts**: Mermaid-based solution flowcharts  
-- 🚀 **Multiple Approaches**: Brute force, optimized, and alternative solutions  
-- 💡 **Detailed Explanations**: Step-by-step problem breakdown  
-- 📝 **Code Examples**: Complete, runnable code implementations  
-- ⚡ **Real-time Processing**: Powered by Google Gemini AI  
-
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
-- Python 3.8+  
-- Flask - Web framework  
-- Google Generative AI - Gemini API for problem solving  
-- Flask-CORS - Cross-origin resource sharing  
+- Python 3.8+
+- Flask - Web framework
+- Google Generative AI - Gemini API for problem solving
+- Flask-CORS - Cross-origin resource sharing
 
 ### Frontend
-- React 18 - UI framework  
-- Axios - HTTP client  
-- Mermaid - Flowchart rendering  
-- React Syntax Highlighter - Code highlighting  
+- React 18 - UI framework
+- Axios - HTTP client
+- Mermaid - Flowchart rendering
+- React Syntax Highlighter - Code highlighting
 
----
-
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
-- Python 3.8 or higher  
-- Node.js 16 or higher  
-- Google Gemini API key  
+- Python 3.8 or higher
+- Node.js 16 or higher
+- Google Gemini API key
 
----
+### Backend Setup
+1. Navigate to backend directory
+   ```bash
+   cd backend
+   ```
+2. Create virtual environment
+   ```bash
+   python -m venv venv
+   ```
+3. Activate virtual environment
+   - Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
+   - macOS/Linux:
+     ```bash
+     source venv/bin/activate
+     ```
+4. Install dependencies
+   ```bash
+   pip install -r req.txt
+   ```
+5. Configure environment variables
+   ```bash
+   # Copy the example file
+   copy .env.example .env
+   # Edit .env and add your Gemini API key
+   GEMINI_API_KEY=your_actual_api_key_here
+   ```
+6. Run the backend server
+   ```bash
+   python app.py
+   ```
+   The backend will run on http://localhost:5000
 
-### 🔹 Backend Setup
+### Frontend Setup
+1. Navigate to frontend directory
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+3. Start the development server
+   ```bash
+   npm start
+   ```
+   The frontend will run on http://localhost:3000
 
-```bash
-# Navigate to backend directory
-cd backend
+## Getting Your Gemini API Key
+1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Sign in with your Google account
+3. Create a new API key
+4. Copy the key and add it to your `.env` file in the backend directory
 
-# Create virtual environment
-python -m venv venv
+## Usage
+1. Open the application at http://localhost:3000
+2. Enter your problem statement in the text area
+3. Select the relevant field (DSA, ML, Cloud, AI, or Cyber)
+4. Click "Solve Problem" to get comprehensive solutions
+5. Review the results including:
+   - Problem explanation
+   - Multiple solution approaches
+   - Code implementations
+   - Visual flowchart
+   - Key insights and related concepts
 
-# Activate environment
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
+## API Endpoints
 
-# Install dependencies
-pip install -r req.txt
-
-# Configure environment variables
-copy .env.example .env   # Windows
-cp .env.example .env     # macOS/Linux
-
-# Edit .env and add your Gemini API key
-GEMINI_API_KEY=your_actual_api_key_here
-
-# Run backend server
-python app.py
-➡️ Backend runs on: http://localhost:5000
-
-🔹 Frontend Setup
-bash
-Copy code
-# Navigate to frontend directory
-cd frontend
-
-# Install dependencies
-npm install
-
-# Start development server
-npm start
-➡️ Frontend runs on: http://localhost:3000
-
-🔑 Getting Your Gemini API Key
-Go to Google AI Studio
-
-Sign in with your Google account
-
-Create a new API key
-
-Copy the key and add it to your .env file
-
-🚀 Usage
-Open the app at http://localhost:3000
-
-Enter your problem statement in the text area
-
-Select the field (DSA, ML, Cloud, AI, or Cyber)
-
-Click "Solve Problem" to generate solutions
-
-You’ll receive:
-
-✅ Problem explanation
-
-✅ Multiple solution approaches
-
-✅ Complete code implementations
-
-✅ Visual flowchart (Mermaid)
-
-✅ Key insights & related concepts
-
-📡 API Endpoints
-POST /solve
+### POST /solve
 Analyzes a problem and returns comprehensive solutions.
 
-Request Body:
-
-json
-Copy code
+**Request Body:**
+```json
 {
   "problem_statement": "Your problem description here",
   "field": "dsa|ml|cloud|ai|cyber"
 }
-Response:
+```
 
-json
-Copy code
+**Response:**
+```json
 {
   "explanation": "Problem explanation",
   "approaches": [
@@ -152,87 +133,66 @@ Copy code
   "keyInsights": ["Important insights"],
   "relatedConcepts": ["Related topics"]
 }
-GET /fields
+```
+
+### GET /fields
 Returns available problem fields.
 
-GET /health
+### GET /health
 Health check endpoint.
 
-📝 Example Problems
-Data Structures & Algorithms
+## Example Problems
+
+### Data Structures & Algorithms
 Find the longest palindromic substring in a given string.
 
-Machine Learning
+### Machine Learning
 Implement a decision tree classifier from scratch and explain the splitting criteria.
 
-Cloud Computing
+### Cloud Computing
 Design a scalable microservices architecture on AWS for an e-commerce platform.
 
-Artificial Intelligence
+### Artificial Intelligence
 Implement the A* pathfinding algorithm and explain its heuristic function.
 
-Cybersecurity
+### Cybersecurity
 Explain SQL injection attacks and implement prevention mechanisms.
 
-🤝 Contributing
-Fork the repository
+## Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-Create a feature branch
-
-Make your changes
-
-Add tests (if applicable)
-
-Submit a pull request
-
-📜 License
+## License
 This project is licensed under the MIT License.
 
-🛠️ Troubleshooting
-Common Issues
-"Module not found" errors
+## Troubleshooting
 
-Ensure virtual environment is activated
+### Common Issues
+**"Module not found" errors**
+- Ensure you've activated the virtual environment
+- Run `pip install -r req.txt` again
 
-Run pip install -r req.txt again
+**CORS errors**
+- Make sure both frontend and backend are running
+- Check that the proxy is configured in package.json
 
-CORS errors
+**API key errors**
+- Verify your Gemini API key is correct
+- Check that the .env file is in the backend directory
 
-Ensure both frontend & backend are running
+**Flowchart not rendering**
+- Check browser console for JavaScript errors
+- Ensure mermaid syntax is valid
 
-Verify proxy is set in package.json
+### Getting Help
+If you encounter issues:
+- Check the console logs (both browser and terminal)
+- Verify all dependencies are installed
+- Ensure API keys are properly configured
+- Check that both servers are running on correct ports
 
-API key errors
-
-Check .env contains correct GEMINI_API_KEY
-
-Flowchart not rendering
-
-Validate Mermaid syntax
-
-Check browser console logs
-
-📢 Getting Help
-Check console logs (frontend & backend)
-
-Verify dependencies are installed
-
-Ensure API keys are configured correctly
-
-Make sure both servers are running on correct ports
-
-📦 About
-🚀 Problem Solver AI – Multi-domain problem solving made easy with Google Gemini AI.
-
-pgsql
-Copy code
-
-Would you like me to also **add a section for screenshots/demo GIFs** so that when you run the project locally, you can just drop in images and make the README more visual?
-
-
-
-
-
-
-
-Ask ChatGPT
+## About
+This project provides an AI-powered solution for complex technical problems across multiple domains, helping developers and engineers understand and implement solutions more effectively.
